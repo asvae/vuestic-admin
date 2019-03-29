@@ -1,4 +1,6 @@
-const themes = {
+import { getHoverColor } from './color-functions'
+
+const colors = {
   primary: '#40e583',
   success: '#40e583',
   info: '#2c82e0',
@@ -6,6 +8,14 @@ const themes = {
   warning: '#ffc202',
   gray: '#babfc2',
   dark: '#34495e',
+}
+
+const themes = {
+  ...colors,
+  diluted: {}
+}
+for (const key in colors) {
+  themes.diluted[key] = getHoverColor(colors[key])
 }
 
 export const ColorPlugin = {

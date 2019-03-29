@@ -4,13 +4,13 @@
       <div class="flex xs12 md12">
         <va-card :title="$t('tables.basic')">
           <div class="table-responsive">
-            <table class="table table-striped first-td-padding">
+            <table class="va-table striped">
               <thead>
               <tr>
-                <td>{{'tables.headings.name' | translate}}</td>
-                <td>{{'tables.headings.email' | translate}}</td>
-                <td>{{'tables.headings.city' | translate}}</td>
-                <td align="right">{{'tables.headings.score' | translate}}</td>
+                <td>{{ $t('tables.headings.name') }}</td>
+                <td>{{ $t('tables.headings.email') }}</td>
+                <td>{{ $t('tables.headings.city') }}</td>
+                <td align="right">{{ $t('tables.headings.score') }}</td>
                 <td></td>
               </tr>
               </thead>
@@ -81,98 +81,7 @@
     <div class="va-row">
       <div class="flex md12 xs12">
         <va-card :title="$t('tables.styled')">
-          <div class="table-responsive">
-            <table class="table table-striped table-sm color-icon-label-table">
-              <thead>
-              <tr>
-                <td></td>
-                <td>{{'tables.headings.name' | translate}}</td>
-                <td>{{'tables.headings.email' | translate}}</td>
-                <td>{{'tables.headings.city' | translate}}</td>
-                <td align="right">{{'tables.headings.score' | translate}}</td>
-                <td align="middle"></td>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td></td>
-                <td>Matthew McCormick</td>
-                <td>matthew30@mail.ol</td>
-                <td>Vancouver</td>
-                <td align="right">93</td>
-                <td align="middle"></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>Nancy Bo</td>
-                <td>nancy@boonweb.com</td>
-                <td>Washington</td>
-                <td align="right">280</td>
-                <td align="middle"></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>Frederiko Lopez</td>
-                <td>fr.lopez@webmail.sp</td>
-                <td>Barcelona</td>
-                <td align="right">16</td>
-                <td align="middle"></td>
-              </tr>
-              <tr class="table-danger">
-                <td>
-                  <span class="badge badge-pill badge-danger">DANGER</span>
-                </td>
-                <td>Stanley Hummer</td>
-                <td>mr_winner_2999@gmail.cb</td>
-                <td>Manchester</td>
-                <td align="right">57</td>
-                <td align="middle">
-                  <va-icon icon="fa fa-exclamation-triangle icon-right input-icon error-icon"/>
-                </td>
-              </tr>
-              <tr class="table-success">
-                <td>
-                  <span class="badge badge-pill badge-primary">SUCCESS</span>
-                </td>
-                <td>Lendley Wintz</td>
-                <td>9938198146@mailster.io</td>
-                <td>Wien</td>
-                <td align="right">113</td>
-                <td align="middle" class="valid">
-                  <va-icon icon="fa fa-check success-icon icon-right input-icon"/>
-                </td>
-              </tr>
-              <tr class="table-warning">
-                <td>
-                  <span class="badge badge-pill badge-warning">WARNING</span>
-                </td>
-                <td>Barbara Noz</td>
-                <td>barbaranoz@mailster.io</td>
-                <td>Brussels</td>
-                <td align="right">68</td>
-                <td align="middle"></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>Matthew McCormick</td>
-                <td>matthew30@mail.ol</td>
-                <td>Vancouver</td>
-                <td align="right">93</td>
-                <td align="middle"></td>
-              </tr>
-              <tr class="table-info">
-                <td>
-                  <span class="badge badge-pill badge-info">INFO</span>
-                </td>
-                <td>Nancy Bo</td>
-                <td>nancy@boonweb.com</td>
-                <td>Washington</td>
-                <td align="right">280</td>
-                <td align="middle"></td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
+          <styled-table/>
         </va-card>
       </div>
     </div>
@@ -214,12 +123,16 @@ import ItemsPerPageDef
 import QueryParams
   from '../../vuestic-theme/vuestic-components/vuestic-datatable/data/query-params'
 import { SpringSpinner } from 'epic-spinners'
+import VaBadge from '../../vuestic-theme/vuestic-components/va-chip/VaBadge'
+import StyledTable from './StyledTable'
 
 Vue.component('badge-column', BadgeColumn)
 
 export default {
   name: 'Table',
   components: {
+    StyledTable,
+    VaBadge,
     SpringSpinner,
   },
   data () {

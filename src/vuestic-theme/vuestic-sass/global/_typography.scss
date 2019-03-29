@@ -183,12 +183,54 @@ ol.va-ordered {
   }
 }
 
-.vue-misc {
-  margin-top: 5.625rem;
-  margin-bottom: 2rem;
+.va-table {
+  width: 100%;
+  border-collapse: collapse;
+  @extend .mb-3;
+  thead tr {
+    border-bottom: 2px solid $vue-darkest-blue;
+    td {
+      @extend .title;
+      color: $vue-darkest-blue;
+    }
+  }
+  td {
+    padding: .625rem;
+    font-size: .875rem;
+    line-height: 1.43;
+    color: $vue-darkest-blue;
+  }
+  &.striped {
+    tbody tr:nth-of-type(odd) {
+      background-color: $white;
+    }
+    tbody tr:nth-of-type(even) {
+      background-color: $light-gray3;
+    }
+  }
 }
+
+.va-figure {
+  border-radius: 0;
+  border: none;
+  box-sizing: border-box;
+  box-shadow: $widget-box-shadow;
+  word-wrap: break-word;
+
+  figcaption {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 
 .text-block {
   padding: 1.2rem;
   background-color: $light-gray3;
 }
+
+

@@ -9,7 +9,7 @@
 @mixin va-display($element) {
   color: $vue-darkest-blue;
   font-size: map-get($display-font-sizes, $element);
-  font-weight: bold;
+  font-weight: $font-weight-bold;
   margin-bottom: 0.5em;
   line-height: 1;
 }
